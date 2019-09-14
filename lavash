@@ -34,5 +34,5 @@ lavash(){
         fi
       echo -ne "${Rainbow[$j]}${string:$i:1}"
     done
-    echo ""
+    echo -e "${NC}"
 }
