@@ -17,11 +17,15 @@ LightCyan='\033[1;36m'
 LightGray='\033[0;37m'
 White='\033[1;37m'
 
-Rainbow=(${RED} ${RED} ${BrownOrange} ${BrownOrange} ${Yellow} ${LightGreen} ${Green} ${LightCyan} ${Cyan} ${LightBlue} ${Blue} ${LightPurple} ${Purple} ${Purple})
+index=0
+
+Rainbow=(${Purple} ${RED} ${LightRed} ${BrownOrange} ${Yellow} ${LightGreen} ${Green} ${LightCyan} ${Cyan} ${LightBlue} ${Blue} ${LightPurple} ${Purple})
 
 lavash(){
+
     string=$1
-    j=0
+    ((j=$index % ${#Rainbow}))
+    ((index++))
     for (( i=0; i<${#string}; i++ )); do
         ((j++))
         if (($j == ${#Rainbow}))
@@ -30,4 +34,5 @@ lavash(){
         fi
       echo -ne "${Rainbow[$j]}${string:$i:1}"
     done
+    echo ""
 }
