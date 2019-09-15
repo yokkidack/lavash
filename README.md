@@ -8,3 +8,11 @@ lavash "<your text>"
 `
 
 ![](example.png)
+
+or 
+
+`
+> ls | ./shaverma.sh
+`
+
+![](example_shaverma.png)
