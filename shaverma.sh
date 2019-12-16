@@ -37,6 +37,8 @@ lavash(){
     echo -e "${NC}"
 }
 
+IFS=$'\n'
+
 while read string
 do
     lavash $string
